@@ -2,6 +2,7 @@ package br.prestacontas.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -18,7 +19,7 @@ public class PrestacaoConta {
 	private Date dataPrestacao;
 	
 	@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-	@OneToOne(fetch = FetchType.LAZY, targetEntity = Adiantamento.class)
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = Adiantamento.class)
 	private Adiantamento adiantamento;
 	
 	public long getId() {

@@ -19,7 +19,7 @@ public class Usuario {
 	private String fone;
 	private String senha;
 	
-	@OneToMany
+	@OneToMany(cascade = CascadeType.ALL)
 	private List<Adiantamento> adiantamentos;
 	
 	public long getId() {
